@@ -35,19 +35,5 @@ object PenyediaViewModel {
                 aplikasiPerpustakaan().container.repositoriPerpustakaan
             )
         }
-
-//        initializer {
-//            DetailPengarangViewModel(
-//                this.createSavedStateHandle(),
-//                aplikasiPerpustakaan().container.repositoriPerpustakaan
-//            )
-//        }
-//
-//        initializer {
-//            DetailKategoriViewModel(
-//                this.createSavedStateHandle(),
-//                aplikasiPerpustakaan().container.repositoriPerpustakaan
-//            )
-//        }
     }
 }
