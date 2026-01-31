@@ -34,26 +34,11 @@ class RepositoriPerpustakaan(
         pengarangIds.forEach { pengarangId ->
             bukuPengarangDao.insert(BukuPengarang(buku.id, pengarangId))
         }
-        // Audit log
-        auditLogDao.insert(AuditLog(
-            tableName = "tblBuku",
-            recordId = buku.id,
-            action = "UPDATE",
-            dataBefore = oldBuku.toString(),
-            dataAfter = buku.toString()
-        ))
     }
 
     suspend fun softDeleteBuku(id: Int) {
         val oldBuku = bukuDao.getBukuById(id).first()
         bukuDao.softDelete(id)
-        auditLogDao.insert(AuditLog(
-            tableName = "tblBuku",
-            recordId = id,
-            action = "DELETE",
-            dataBefore = oldBuku.toString(),
-            dataAfter = null
-        ))
     }
 
     // ==================== PENGARANG ====================
@@ -91,13 +76,6 @@ class RepositoriPerpustakaan(
             throw IllegalArgumentException("Cyclic reference detected!")
         }
         val id = kategoriDao.insert(kategori)
-        auditLogDao.insert(AuditLog(
-            tableName = "tblKategori",
-            recordId = id.toInt(),
-            action = "INSERT",
-            dataBefore = null,
-            dataAfter = kategori.toString()
-        ))
         return id
     }
 
