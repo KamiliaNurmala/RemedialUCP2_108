@@ -31,9 +31,6 @@ interface KategoriDao {
     @Delete
     suspend fun delete(kategori: Kategori)
 
-    @Query("UPDATE tblKategori SET isDeleted = 1 WHERE id = :id")
-    suspend fun softDelete(id: Int)
-
     @Query("SELECT * FROM tblKategori WHERE parentId = :parentId AND isDeleted = 0")
     suspend fun getSubKategoriList(parentId: Int): List<Kategori>
 }

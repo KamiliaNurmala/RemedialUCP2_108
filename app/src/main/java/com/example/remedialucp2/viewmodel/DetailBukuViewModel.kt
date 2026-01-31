@@ -38,10 +38,6 @@ class DetailBukuViewModel(
         }
     }
 
-    fun updateUiState(detailBuku: DetailBuku) {
-        uiState = UIStateBuku(detailBuku = detailBuku, isEntryValid = true)
-    }
-
     suspend fun updateBuku(): Boolean {
         return try {
             repositori.updateBuku(

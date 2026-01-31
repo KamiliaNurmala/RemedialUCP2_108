@@ -64,7 +64,6 @@ fun PerpustakaanApp(
                 type = NavType.IntType
             })
         ) {
-//            DetailPengarangScreen(navigateBack = { navController.popBackStack() })
         }
 
         // Detail Kategori
@@ -74,7 +73,6 @@ fun PerpustakaanApp(
                 type = NavType.IntType
             })
         ) {
-//            DetailKategoriScreen(navigateBack = { navController.popBackStack() })
         }
     }
 }

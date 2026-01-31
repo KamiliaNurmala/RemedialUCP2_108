@@ -25,6 +25,4 @@ interface PengarangDao {
     @Delete
     suspend fun delete(pengarang: Pengarang)
 
-    @Query("UPDATE tblPengarang SET isDeleted = 1 WHERE id = :id")
-    suspend fun softDelete(id: Int)
 }

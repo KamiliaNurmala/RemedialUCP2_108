@@ -31,9 +31,6 @@ interface BukuDao {
     @Delete
     suspend fun delete(buku: Buku)
 
-    @Query("UPDATE tblBuku SET isDeleted = 1, updatedAt = :timestamp WHERE id = :id")
-    suspend fun softDelete(id: Int, timestamp: Long = System.currentTimeMillis())
-
     @Query("UPDATE tblBuku SET kategoriId = NULL WHERE kategoriId = :kategoriId")
     suspend fun setBukuTanpaKategori(kategoriId: Int)
 
