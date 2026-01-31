@@ -4,7 +4,6 @@ import com.example.remedialucp2.room.Buku
 import com.example.remedialucp2.room.Pengarang
 import com.example.remedialucp2.room.Kategori
 
-// ==================== BUKU ====================
 data class DetailBuku(
     val id: Int = 0,
     val judul: String = "",
@@ -38,12 +37,6 @@ fun Buku.toDetailBuku(): DetailBuku = DetailBuku(
     statusPinjam = statusPinjam
 )
 
-fun Buku.toUiStateBuku(isEntryValid: Boolean = false): UIStateBuku = UIStateBuku(
-    detailBuku = this.toDetailBuku(),
-    isEntryValid = isEntryValid
-)
-
-// ==================== PENGARANG ====================
 data class DetailPengarang(
     val id: Int = 0,
     val nama: String = "",
@@ -61,18 +54,7 @@ fun DetailPengarang.toPengarang(): Pengarang = Pengarang(
     negara = negara
 )
 
-fun Pengarang.toDetailPengarang(): DetailPengarang = DetailPengarang(
-    id = id,
-    nama = nama,
-    negara = negara
-)
 
-fun Pengarang.toUiStatePengarang(isEntryValid: Boolean = false): UIStatePengarang = UIStatePengarang(
-    detailPengarang = this.toDetailPengarang(),
-    isEntryValid = isEntryValid
-)
-
-// ==================== KATEGORI ====================
 data class DetailKategori(
     val id: Int = 0,
     val nama: String = "",
@@ -90,13 +72,5 @@ fun DetailKategori.toKategori(): Kategori = Kategori(
     parentId = parentId
 )
 
-fun Kategori.toDetailKategori(): DetailKategori = DetailKategori(
-    id = id,
-    nama = nama,
-    parentId = parentId
-)
 
-fun Kategori.toUiStateKategori(isEntryValid: Boolean = false): UIStateKategori = UIStateKategori(
-    detailKategori = this.toDetailKategori(),
-    isEntryValid = isEntryValid
-)
+

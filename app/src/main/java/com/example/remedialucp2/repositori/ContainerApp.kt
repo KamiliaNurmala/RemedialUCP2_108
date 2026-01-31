@@ -17,7 +17,6 @@ class ContainerDataApp(private val context: Context) : ContainerApp {
             pengarangDao = database.pengarangDao(),
             kategoriDao = database.kategoriDao(),
             bukuPengarangDao = database.bukuPengarangDao(),
-            auditLogDao = database.auditLogDao(),
             database = database
         )
     }

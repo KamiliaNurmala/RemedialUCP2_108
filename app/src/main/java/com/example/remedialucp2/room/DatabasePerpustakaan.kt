@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [Buku::class, Pengarang::class, Kategori::class, BukuPengarang::class, AuditLog::class],
+    entities = [Buku::class, Pengarang::class, Kategori::class, BukuPengarang::class,],
     version = 1,
     exportSchema = false
 )
@@ -15,7 +15,6 @@ abstract class DatabasePerpustakaan : RoomDatabase() {
     abstract fun pengarangDao(): PengarangDao
     abstract fun kategoriDao(): KategoriDao
     abstract fun bukuPengarangDao(): BukuPengarangDao
-    abstract fun auditLogDao(): AuditLogDao
 
     companion object {
         @Volatile
